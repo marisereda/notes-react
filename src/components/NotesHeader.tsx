@@ -17,22 +17,6 @@ export function NotesHeader({ headerButtons }: NotesHeaderProps) {
         {headerButtons.map(({ icon, operation }) => (
           <ButtonIcon icon={icon} operation={operation} />
         ))}
-
-        {/* <button data-operation="notes-add">
-          <svg className="block w-4 h-4 fill-current">
-            <use href="./images/icons.svg#icon-add"></use>
-          </svg>
-        </button>
-        <button data-operation="notes-zip-all">
-          <svg className="block w-5 h-5 fill-current">
-            <use href="./images/icons.svg#icon-zip"></use>
-          </svg>
-        </button>
-        <button data-operation="notes-delete-all">
-          <svg className="block w-5 h-5 fill-current">
-            <use href="./images/icons.svg#icon-delete"></use>
-          </svg>
-        </button> */}
       </div>
     </div>
   );

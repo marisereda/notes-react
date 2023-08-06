@@ -1,4 +1,6 @@
+import { ArchiveModal } from './components/ArchiveModal';
 import { CategoriesTable } from './components/CategoriesTable';
+import { NoteModal } from './components/NoteModal';
 import { NotesTable } from './components/NotesTable';
 import { Title } from './components/Title';
 import { notesHeaderButtons, notesListButtons } from './constants';
@@ -18,6 +20,8 @@ function App() {
         <Title>Categories</Title>
         <CategoriesTable />
       </section>
+      {true && <NoteModal />}
+      {true && <ArchiveModal />}
     </main>
   );
 }
