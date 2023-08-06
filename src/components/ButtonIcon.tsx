@@ -1,11 +1,11 @@
 interface ButtonIconProps {
   icon: string;
-  operation: string;
+  onClick: () => void;
 }
 
-export function ButtonIcon({ icon, operation }: ButtonIconProps) {
+export function ButtonIcon({ icon, onClick }: ButtonIconProps) {
   return (
-    <button data-operation={operation}>
+    <button onClick={onClick}>
       <svg className="block w-5 h-5 fill-current">
         <use href={icon}></use>
       </svg>

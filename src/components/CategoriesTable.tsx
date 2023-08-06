@@ -1,16 +1,17 @@
+import { useSelector } from 'react-redux';
 import { CategoriesHeader } from './CategoriesHeader';
-import { initialCategories } from '../constants';
 import { CategoriesItem } from './CategoriesItem';
-
-// interface CategoriesTableProps {}
+import { selectCategoriesTableData } from '../redux/notesSelectors';
 
 export function CategoriesTable() {
+  const categoryTableData = useSelector(selectCategoriesTableData);
+
   return (
     <>
       <CategoriesHeader />
-      <ul id="categories-list" className="flex flex-col gap-2 text-slate-700">
-        {initialCategories.map((category) => (
-          <CategoriesItem category={category} />
+      <ul className="flex flex-col gap-2 text-slate-700">
+        {categoryTableData.map((category) => (
+          <CategoriesItem key={category.name} category={category} />
         ))}
       </ul>
     </>

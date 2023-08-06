@@ -1,22 +1,26 @@
-import { NotesHeader } from './NotesHeader';
-import { initialNotes } from '../constants';
-import { NotesItem } from './NotesItem';
+import { NotesHeader, NotesHeaderProps } from './NotesHeader';
+import { NotesItem, NotesItemProps } from './NotesItem';
+import { Note } from '../types';
 
 interface NotesTableProps {
-  headerButtons: Record<string, string>[];
-  listButtons: Record<string, string>[];
+  showHeaderButtons: NotesHeaderProps['showButtons'];
+  showListButtons: NotesItemProps['showButtons'];
+  notes: Note[];
 }
 
-// { key: string; value: string }
-export function NotesTable({ headerButtons, listButtons }: NotesTableProps) {
+export function NotesTable({
+  showHeaderButtons,
+  showListButtons,
+  notes,
+}: NotesTableProps) {
   return (
-    <div id="notes-table">
-      <NotesHeader headerButtons={headerButtons} />
-      <ul id="notes-list" className="flex flex-col gap-2 text-slate-700">
-        {initialNotes.map((note) => (
-          <NotesItem note={note} listButtons={listButtons} />
+    <>
+      <NotesHeader showButtons={showHeaderButtons} />
+      <ul className="flex flex-col gap-2 text-slate-700">
+        {notes.map((note) => (
+          <NotesItem key={note.id} note={note} showButtons={showListButtons} />
         ))}
       </ul>
-    </div>
+    </>
   );
 }

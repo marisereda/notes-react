@@ -1,30 +1,30 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { initialNotes } from '../constants';
-import { Category, CreateNote, Note, UpdateNote } from '../models';
+import { Category, CreateNote, Note, UpdateNote } from '../types';
 import { generateId } from '../helpers';
 
 export interface NotesState {
   notes: Note[];
   isNoteModalOpened: boolean;
   isArchiveModalOpened: boolean;
-  currentNoteId: Note['id'] | null;
-  currentCategoryName: Category['name'] | null;
+  currentNoteId?: Note['id'];
+  currentCategoryName?: Category['name'];
 }
 
 const initialState: NotesState = {
   notes: initialNotes,
   isNoteModalOpened: false,
   isArchiveModalOpened: false,
-  currentNoteId: null,
-  currentCategoryName: null,
+  currentNoteId: undefined,
+  currentCategoryName: undefined,
 };
 
-export const counterSlice = createSlice({
+export const notesSlice = createSlice({
   name: 'notes',
   initialState,
   reducers: {
-    openNoteModal: (state, action: PayloadAction<Note['id'] | null>) => {
+    openNoteModal: (state, action: PayloadAction<Note['id'] | undefined>) => {
       state.currentNoteId = action.payload;
       state.isNoteModalOpened = true;
     },
@@ -59,20 +59,24 @@ export const counterSlice = createSlice({
       state.notes = state.notes.filter((note) => note.archived === true);
     },
 
-    zipNote: (state, action: PayloadAction<string>) => {
+    zipNote: (state, action: PayloadAction<Note['id']>) => {
       const note = state.notes.find((note) => note.id === action.payload);
       if (note) {
         note.archived = true;
       }
     },
 
-    deleteNote: (state, action: PayloadAction<string>) => {
+    deleteNote: (state, action: PayloadAction<Note['id']>) => {
       state.notes = state.notes.filter((note) => note.id !== action.payload);
     },
 
     openArchiveModal: (state, action: PayloadAction<Category['name']>) => {
       state.currentCategoryName = action.payload;
       state.isArchiveModalOpened = true;
+    },
+
+    closeArchiveModal: (state) => {
+      state.isArchiveModalOpened = false;
     },
 
     activateAllNotesFromCategory: (
@@ -96,6 +100,7 @@ export const counterSlice = createSlice({
           note.category !== action.payload ||
           (note.category === action.payload && note.archived === false)
       );
+      state.isArchiveModalOpened = false;
     },
 
     activateNote: (state, action: PayloadAction<Note['id']>) => {
@@ -107,7 +112,21 @@ export const counterSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+// ----------------------------------------------------------------
+export const {
+  openNoteModal,
+  closeNoteModal,
+  addNote,
+  updateNote,
+  zipAllNotes,
+  deleteActiveNotes,
+  zipNote,
+  deleteNote,
+  openArchiveModal,
+  closeArchiveModal,
+  activateAllNotesFromCategory,
+  deleteZipNotesFromCategory,
+  activateNote,
+} = notesSlice.actions;
 
-export default counterSlice.reducer;
+export default notesSlice.reducer;

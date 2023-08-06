@@ -15,3 +15,8 @@ export interface Category {
   icon: string;
   name: 'Idea' | 'Random Thought' | 'Task';
 }
+
+export interface CategoryTableData extends Category {
+  activeNumber: number;
+  zipNumber: number;
+}

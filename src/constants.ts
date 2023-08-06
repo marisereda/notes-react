@@ -1,5 +1,5 @@
 import { generateId } from './helpers';
-import { Category, Note } from './models';
+import { Category, Note } from './types';
 import icons from './assets/icons.svg';
 
 export const initialCategories: Category[] = [
@@ -78,24 +78,4 @@ export const initialNotes: Note[] = [
       "I've always wanted to write a novel. Maybe I'll start with a short story.",
     archived: false,
   },
-];
-
-export const notesHeaderButtons = [
-  { operation: 'notes-add', icon: `${icons}#icon-add` },
-  { operation: 'notes-zip-all', icon: `${icons}#icon-zip` },
-  { operation: 'notes-delete-all', icon: `${icons}#icon-delete` },
-];
-
-export const notesListButtons = [
-  { operation: 'notes-edit', icon: `${icons}#icon-edit` },
-  { operation: 'notes-zip', icon: `${icons}#icon-zip` },
-  { operation: 'notes-delete', icon: `${icons}#icon-delete` },
-];
-export const archiveHeaderButtons = [
-  { operation: 'arch-activate-all', icon: `${icons}#icon-active` },
-  { operation: 'arch-delete-all', icon: `${icons}#icon-delete` },
-];
-export const archiveListButtons = [
-  { operation: 'arch-activate', icon: `${icons}#icon-active` },
-  { operation: 'arch-delete', icon: `${icons}#icon-delete` },
 ];
