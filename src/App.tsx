@@ -20,7 +20,7 @@ function App() {
         <Title>Categories</Title>
         <CategoriesTable />
       </section>
-      {true && <NoteModal />}
+      {false && <NoteModal />}
       {true && <ArchiveModal />}
     </main>
   );

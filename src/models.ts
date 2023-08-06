@@ -7,6 +7,10 @@ export interface Note {
   archived: boolean;
 }
 
+export type CreateNote = Pick<Note, 'name' | 'category' | 'content'>;
+
+export type UpdateNote = Pick<Note, 'id' | 'name' | 'category' | 'content'>;
+
 export interface Category {
   icon: string;
   name: 'Idea' | 'Random Thought' | 'Task';
