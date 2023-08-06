@@ -12,4 +12,4 @@ Notes app allows the user to add, edit, remove and archivate notes. There is als
 
 ## Live application
 
-[notes-react]([https://marisereda.github.io/notes-js/](https://graceful-crisp-910b9b.netlify.app/)https://graceful-crisp-910b9b.netlify.app/)
+[notes-react](https://graceful-crisp-910b9b.netlify.app/)
