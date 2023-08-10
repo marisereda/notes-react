@@ -1,6 +1,6 @@
-import { generateId } from './helpers';
-import { Category, Note } from './types';
-import icons from './assets/icons.svg';
+import { generateId } from '../utils/helpers';
+import { Category, Note } from '../types';
+import icons from '../assets/icons.svg';
 
 export const initialCategories: Category[] = [
   {

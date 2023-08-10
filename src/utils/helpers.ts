@@ -1,5 +1,5 @@
-import { initialCategories } from './constants';
-import { Category } from './types';
+import { initialCategories } from '../constants';
+import { Category } from '../types';
 
 export function generateId() {
   return Math.ceil(Math.random() * 1000000).toString();

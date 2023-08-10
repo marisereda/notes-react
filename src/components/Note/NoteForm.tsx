@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Button } from './Button';
-import { initialCategories } from '../constants';
-import { Input } from './Input';
-import { TextArea } from './TextArea';
-import { Select } from './Select';
-import { selectCurrentNote } from '../redux/notesSelectors';
-import { addNote, closeNoteModal, updateNote } from '../redux/notesSlice';
-import { Category } from '../types';
+import { Button } from '../common/Button';
+import { initialCategories } from '../../constants';
+import { Input } from '../common/Input';
+import { TextArea } from '../common/TextArea';
+import { Select } from '../common/Select';
+import { selectCurrentNote } from '../../redux/notesSelectors';
+import { addNote, closeNoteModal, updateNote } from '../../redux/notesSlice';
+import { Category } from '../../types';
 
 export function NoteForm() {
   const options = initialCategories.map((category) => category.name);

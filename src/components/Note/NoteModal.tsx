@@ -1,4 +1,4 @@
-import { ModalTitle } from './ModalTitle';
+import { ModalTitle } from '../common/ModalTitle';
 import { NoteForm } from './NoteForm';
 
 export function NoteModal() {

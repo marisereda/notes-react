@@ -1,9 +1,9 @@
-import { ModalTitle } from './ModalTitle';
+import { ModalTitle } from '../common/ModalTitle';
 import { NotesTable } from './NotesTable';
-import { Button } from './Button';
-import { closeArchiveModal } from '../redux/notesSlice';
+import { Button } from '../common/Button';
+import { closeArchiveModal } from '../../redux/notesSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectZipNotes } from '../redux/notesSelectors';
+import { selectZipNotes } from '../../redux/notesSelectors';
 
 export function ArchiveModal() {
   const dispatch = useDispatch();
