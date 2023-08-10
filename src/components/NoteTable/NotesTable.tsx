@@ -1,6 +1,6 @@
 import { NotesHeader, NotesHeaderProps } from './NotesHeader';
 import { NotesItem, NotesItemProps } from './NotesItem';
-import { Note } from '../types';
+import { Note } from '../../types';
 
 interface NotesTableProps {
   showHeaderButtons: NotesHeaderProps['showButtons'];

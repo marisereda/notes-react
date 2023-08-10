@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { initialNotes } from '../constants';
 import { Category, CreateNote, Note, UpdateNote } from '../types';
-import { generateId } from '../helpers';
+import { generateId } from '../utils/helpers';
 
 export interface NotesState {
   notes: Note[];

@@ -1,14 +1,14 @@
 import { useDispatch } from 'react-redux';
-import { formatDate, findDates, getCategoryIcon } from '../helpers';
-import { Note } from '../types';
-import { ButtonIcon } from './ButtonIcon';
-import icons from '../assets/icons.svg';
+import { formatDate, findDates, getCategoryIcon } from '../../utils/helpers';
+import { Note } from '../../types';
+import { ButtonIcon } from '../common/ButtonIcon';
+import icons from '../../assets/icons.svg';
 import {
   activateNote,
   deleteNote,
   openNoteModal,
   zipNote,
-} from '../redux/notesSlice';
+} from '../../redux/notesSlice';
 
 export interface NotesItemProps {
   note: Note;

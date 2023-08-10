@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
+import { selectCategoriesTableData } from '../../redux/notesSelectors';
 import { CategoriesHeader } from './CategoriesHeader';
 import { CategoriesItem } from './CategoriesItem';
-import { selectCategoriesTableData } from '../redux/notesSelectors';
 
 export function CategoriesTable() {
   const categoryTableData = useSelector(selectCategoriesTableData);

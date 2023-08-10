@@ -1,14 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { ButtonIcon } from './ButtonIcon';
-import icons from '../assets/icons.svg';
+import { ButtonIcon } from '../common/ButtonIcon';
+import icons from '../../assets/icons.svg';
 import {
   activateAllNotesFromCategory,
   deleteActiveNotes,
   deleteZipNotesFromCategory,
   openNoteModal,
   zipAllNotes,
-} from '../redux/notesSlice';
-import { selectCurrentCategoryName } from '../redux/notesSelectors';
+} from '../../redux/notesSlice';
+import { selectCurrentCategoryName } from '../../redux/notesSelectors';
 
 export interface NotesHeaderProps {
   showButtons: {

@@ -1,9 +1,9 @@
 import { useDispatch } from 'react-redux';
-import { getCategoryIcon } from '../helpers';
-import icons from '../assets/icons.svg';
-import { CategoryTableData } from '../types';
-import { openArchiveModal } from '../redux/notesSlice';
-import { ButtonIcon } from './ButtonIcon';
+import { getCategoryIcon } from '../../utils/helpers';
+import icons from '../../assets/icons.svg';
+import { CategoryTableData } from '../../types';
+import { openArchiveModal } from '../../redux/notesSlice';
+import { ButtonIcon } from '../common/ButtonIcon';
 
 interface CategoriesItemProps {
   category: CategoryTableData;

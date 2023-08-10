@@ -3,7 +3,6 @@ interface InputProps {
 }
 
 export function Input({ defaultValue }: InputProps) {
-
   return (
     <label className="relative block w-full">
       <input
