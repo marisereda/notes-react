@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { getCategoryIcon } from '../../utils/helpers';
-import icons from '../../assets/icons.svg';
-import { CategoryTableData } from '../../types';
+
+import { CategoryTableData, Icon } from '../../types';
 import { openArchiveModal } from '../../redux/notesSlice';
 import { ButtonIcon } from '../common/ButtonIcon';
 
@@ -24,7 +24,7 @@ export function CategoriesItem({ category }: CategoriesItemProps) {
       <p className="w-3/12 text-center">{category.zipNumber}</p>
       <div className="w-1/12 text-teal-700">
         <ButtonIcon
-          icon={`${icons}#icon-open`}
+          icon={Icon.Open}
           onClick={() => dispatch(openArchiveModal(category.name))}
         />
       </div>

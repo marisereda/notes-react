@@ -1,13 +1,15 @@
-interface ButtonIconProps {
-  icon: string;
-  onClick: () => void;
+import icons from '../../assets/icons.svg';
+import { Icon } from '../../types';
+
+interface ButtonIconProps extends React.ComponentPropsWithoutRef<'button'> {
+  icon: Icon;
 }
 
-export function ButtonIcon({ icon, onClick }: ButtonIconProps) {
+export function ButtonIcon({ icon, ...otherProps }: ButtonIconProps) {
   return (
-    <button onClick={onClick}>
+    <button {...otherProps}>
       <svg className="block w-5 h-5 fill-current">
-        <use href={icon}></use>
+        <use href={icons + '#' + icon}></use>
       </svg>
     </button>
   );

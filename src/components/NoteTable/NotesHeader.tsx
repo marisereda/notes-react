@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { ButtonIcon } from '../common/ButtonIcon';
-import icons from '../../assets/icons.svg';
+
 import {
   activateAllNotesFromCategory,
   deleteActiveNotes,
@@ -9,6 +9,7 @@ import {
   zipAllNotes,
 } from '../../redux/notesSlice';
 import { selectCurrentCategoryName } from '../../redux/notesSelectors';
+import { Icon } from '../../types';
 
 export interface NotesHeaderProps {
   showButtons: {
@@ -35,33 +36,30 @@ export function NotesHeader({ showButtons }: NotesHeaderProps) {
       <div className="flex w-1/12 gap-3">
         {showButtons.addNote && (
           <ButtonIcon
-            icon={`${icons}#icon-add`}
+            icon={Icon.Add}
             onClick={() => dispatch(openNoteModal())}
           />
         )}
         {showButtons.activateNotes && currentCategoryName && (
           <ButtonIcon
-            icon={`${icons}#icon-active`}
+            icon={Icon.Active}
             onClick={() =>
               dispatch(activateAllNotesFromCategory(currentCategoryName))
             }
           />
         )}
         {showButtons.zipNotes && (
-          <ButtonIcon
-            icon={`${icons}#icon-zip`}
-            onClick={() => dispatch(zipAllNotes())}
-          />
+          <ButtonIcon icon={Icon.Zip} onClick={() => dispatch(zipAllNotes())} />
         )}
         {showButtons.deleteActiveNotes && (
           <ButtonIcon
-            icon={`${icons}#icon-delete`}
+            icon={Icon.Delete}
             onClick={() => dispatch(deleteActiveNotes())}
           />
         )}
         {showButtons.deleteZipNotes && currentCategoryName && (
           <ButtonIcon
-            icon={`${icons}#icon-delete`}
+            icon={Icon.Delete}
             onClick={() =>
               dispatch(deleteZipNotesFromCategory(currentCategoryName))
             }
