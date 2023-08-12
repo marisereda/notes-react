@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { formatDate, findDates, getCategoryIcon } from '../../utils/helpers';
-import { Note } from '../../types';
+import { Icon, Note } from '../../types';
 import { ButtonIcon } from '../common/ButtonIcon';
-import icons from '../../assets/icons.svg';
+
 import {
   activateNote,
   deleteNote,
@@ -38,25 +38,25 @@ export function NotesItem({ note, showButtons }: NotesItemProps) {
       <div className="flex w-1/12 gap-3 text-teal-700">
         {showButtons.editNote && (
           <ButtonIcon
-            icon={`${icons}#icon-edit`}
+            icon={Icon.Edit}
             onClick={() => dispatch(openNoteModal(note.id))}
           />
         )}
         {showButtons.activateNote && (
           <ButtonIcon
-            icon={`${icons}#icon-active`}
+            icon={Icon.Active}
             onClick={() => dispatch(activateNote(note.id))}
           />
         )}
         {showButtons.zipNote && (
           <ButtonIcon
-            icon={`${icons}#icon-zip`}
+            icon={Icon.Zip}
             onClick={() => dispatch(zipNote(note.id))}
           />
         )}
         {showButtons.deleteNote && (
           <ButtonIcon
-            icon={`${icons}#icon-delete`}
+            icon={Icon.Delete}
             onClick={() => dispatch(deleteNote(note.id))}
           />
         )}

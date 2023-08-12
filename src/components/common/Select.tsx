@@ -1,6 +1,8 @@
+import { Category } from '../../types';
+
 interface SelectProps {
-  options: string[];
-  defaultValue: string;
+  options: Category['name'][];
+  defaultValue: Category['name'];
 }
 
 export function Select({ options, defaultValue }: SelectProps) {

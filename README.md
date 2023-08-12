@@ -13,3 +13,17 @@ Notes app allows the user to add, edit, remove and archivate notes. There is als
 ## Live application
 
 [notes-react](https://graceful-crisp-910b9b.netlify.app/)
+
+## Run locally
+
+### Run dev server
+
+```bash
+npm run dev
+```
+
+### Run storybook
+
+```bash
+npm run storybook
+```

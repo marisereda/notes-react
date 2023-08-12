@@ -20,3 +20,15 @@ export interface CategoryTableData extends Category {
   activeNumber: number;
   zipNumber: number;
 }
+
+export enum Icon {
+  Delete = 'icon-delete',
+  Edit = 'icon-edit',
+  Open = 'icon-open',
+  Zip = 'icon-zip',
+  Active = 'icon-active',
+  Task = 'icon-task',
+  Thought = 'icon-thought',
+  Idea = 'icon-idea',
+  Add = 'icon-add',
+}
